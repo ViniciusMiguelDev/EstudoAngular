@@ -1,0 +1,38 @@
+<main *ngIf="isAliveCard; else elseBlock">
+  <h1>My App</h1>
+  <p>card works!</p>
+</main>
+<ng-template #elseBlock>
+  <p>Olá sou um bloco secreto</p>
+</ng-template>
+<button (click)="changeLive()">Olá Mundo</button>
+
+<ul style="list-style: none">
+  <li *ngFor="let p of produtos; let i = index">{{ i + 1 }} - {{ p }}</li>
+  <button (click)="adicionar()">Adicionar</button>
+  <button (click)="remover()">Remover</button>
+</ul>
+
+<div [ngSwitch]="menuType">
+  <div *ngSwitchCase="'user'">
+    <ul>
+      <li>editar perfil</li>
+      <li>adicionar cartão</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'admin'">
+    <ul>
+      <li>editar perfil</li>
+      <li>adicionar cartão</li>
+      <li>gerenciar usuarios</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'superuser'">
+    <ul>
+      <li>editar perfil</li>
+      <li>adicionar cartão</li>
+      <li>gerenciar usuarios</li>
+      <li>gerenciar admins</li>
+    </ul>
+  </div>
+</div>
