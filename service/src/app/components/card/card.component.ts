@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PokemonServiceService } from '../../services/pokemon-service.service';
+import { MeuPipePipe } from "../../meu-pipe.pipe";
 
 @Component({
   selector: 'app-card',
-  imports: [CommonModule],
+  imports: [CommonModule, MeuPipePipe],
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css'],
 })

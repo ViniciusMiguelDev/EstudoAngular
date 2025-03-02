@@ -1,12 +1,14 @@
 <div class="container__card">
-  <input type="text" (input)="getPokemon($any($event.target).value)">
+  <input type="text" (input)="getPokemon($any($event.target).value)" />
   <div class="title__card">
-    <h3>{{ name }}</h3>
+    <h3>{{ name | meuPipe }}</h3>
   </div>
   <div class="body__card">
     <img [src]="photo" alt="" height="250" />
   </div>
   <div class="stats__card">
-    <span class="stats__card__type" *ngFor="let type of types">{{ type }}</span>
+    <span class="stats__card__type" *ngFor="let type of types">{{
+      type | meuPipe
+    }}</span>
   </div>
 </div>
